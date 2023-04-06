@@ -5,4 +5,5 @@ return {
   { "christoomey/vim-tmux-navigator" },
   { "rbgrouleff/bclose.vim" },
   { "francoiscabrol/ranger.vim" },
+  { "vim-test/vim-test" },
 }

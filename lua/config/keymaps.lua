@@ -27,10 +27,18 @@ map("n", "<C-x>", function()
   require("mini.bufremove").delete(0, false)
 end, { desc = "Delete Buffer" })
 -- from primegean
-vim.keymap.set("x", "<leader>p", [["_dP]])
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "G", "Gzz")
+map("x", "<leader>p", [["_dP]])
+map("n", "<C-d>", "<C-d>zz")
+map("n", "<C-u>", "<C-u>zz")
+map("n", "G", "Gzz")
+map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+map("n", "<leader>ch", "<cmd>!chmod +x %<CR>", { silent = true })
+--tmux keybind
+map("n", "<C-j>", "<cmd> TmuxNavigateDown<CR>")
+map("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>")
+map("n", "<C-h>", "<cmd> TmuxNavigateLeft<CR>")
+map("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>")
+
 --insert mode binding
 map("i", "jk", "<Esc>", { desc = "escape insert mode with jk" })
 map("i", "jj", "<C-o>a", { desc = "exit insert mode then go to next word" })
