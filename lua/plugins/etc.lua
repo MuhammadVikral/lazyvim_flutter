@@ -6,4 +6,5 @@ return {
   { "rbgrouleff/bclose.vim" },
   { "francoiscabrol/ranger.vim" },
   { "vim-test/vim-test" },
+  { "mbbill/undotree" },
 }

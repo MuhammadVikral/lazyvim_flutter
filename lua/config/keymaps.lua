@@ -33,6 +33,7 @@ map("n", "<C-u>", "<C-u>zz")
 map("n", "G", "Gzz")
 map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 map("n", "<leader>ch", "<cmd>!chmod +x %<CR>", { silent = true })
+map("n", "<leader>uu", "<cmd>UndotreeToggle<CR>", { silent = true })
 --tmux keybind
 map("n", "<C-j>", "<cmd> TmuxNavigateDown<CR>")
 map("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>")
