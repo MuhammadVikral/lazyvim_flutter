@@ -20,6 +20,10 @@ map("n", "<leader>rR", "<cmd> FlutterRestart <CR>", { desc = "Restart Flutter Ap
 map("n", "<leader>rl", "<cmd> FlutterLogClear <CR>", { desc = "Clear the log of Flutter Apps" })
 map("n", "<leader>rd", "<cmd> FlutterDevices <CR>", { desc = "Check available device" })
 map("n", "<leader>rq", "<cmd> FlutterQuit <CR>", { desc = "Stop Running Application" })
+map("n", "<leader>rs", function()
+  package.loaded["fcreate"] = nil
+  require("fcreate").cbx()
+end, { desc = "rerun plugin" })
 map("n", [[<c-\>]], "<cmd>Ranger<CR>", { desc = "toggle Terminal" })
 map({ "n", "v" }, "gl", "$", { desc = "go to the last word in line" })
 map({ "n", "v" }, "gb", "^", { desc = "go to the last word in line" })

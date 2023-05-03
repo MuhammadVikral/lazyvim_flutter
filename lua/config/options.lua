@@ -4,3 +4,4 @@
 vim.opt.clipboard = "unnamedplus"
 vim.opt.scrolloff = 8
 vim.g.neovide_transparency = 0.8
+vim.opt.splitright = true

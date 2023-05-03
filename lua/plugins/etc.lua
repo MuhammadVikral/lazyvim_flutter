@@ -7,4 +7,5 @@ return {
   { "francoiscabrol/ranger.vim" },
   { "vim-test/vim-test" },
   { "mbbill/undotree" },
+  { dir = "~/.config/nvim/fcreate/", dev = true, lazy = false },
 }
