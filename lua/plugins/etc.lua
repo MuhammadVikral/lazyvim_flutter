@@ -5,7 +5,7 @@ return {
   { "christoomey/vim-tmux-navigator" },
   { "rbgrouleff/bclose.vim" },
   { "francoiscabrol/ranger.vim" },
-  { "vim-test/vim-test" },
   { "mbbill/undotree" },
   { dir = "~/.config/nvim/fcreate/", dev = true, lazy = false },
+  -- { "github/copilot.vim" },
 }

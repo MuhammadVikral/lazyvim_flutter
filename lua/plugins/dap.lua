@@ -4,7 +4,7 @@ return {
     local dap = require("dap")
     dap.adapters.dart = {
       type = "executable",
-      command = "dart",
+      command = "flutter",
       args = { "debug_adapter" },
     }
     dap.configurations.dart = {

@@ -2,6 +2,7 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 --
+--
 local function map(mode, lhs, rhs, opts)
   local keys = require("lazy.core.handler").handlers.keys
   ---@cast keys LazyKeysHandler
@@ -20,7 +21,8 @@ map("n", "<leader>rR", "<cmd> FlutterRestart <CR>", { desc = "Restart Flutter Ap
 map("n", "<leader>rl", "<cmd> FlutterLogClear <CR>", { desc = "Clear the log of Flutter Apps" })
 map("n", "<leader>rd", "<cmd> FlutterDevices <CR>", { desc = "Check available device" })
 map("n", "<leader>rq", "<cmd> FlutterQuit <CR>", { desc = "Stop Running Application" })
-map("n", "<leader>rs", function()
+map("n", "<leader>rt", "<cmd> !flutter_test.sh %:p<CR>", { desc = "run flutter test on current file" })
+map("n", "<leader>gt", function()
   package.loaded["fcreate"] = nil
   require("fcreate").cbx()
 end, { desc = "rerun plugin" })
@@ -45,5 +47,22 @@ map("n", "<C-h>", "<cmd> TmuxNavigateLeft<CR>")
 map("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>")
 
 --insert mode binding
-map("i", "jk", "<Esc>", { desc = "escape insert mode with jk" })
+-- map("i", "jk", "<Esc>", { desc = "escape insert mode with jk" })
 map("i", "jj", "<C-o>a", { desc = "exit insert mode then go to next word" })
+
+map("n", "<leader>rw", function()
+  local current_directory = vim.fn.expand("%:p:h")
+  -- Get the filename from user input
+  local filename = vim.fn.input("Enter the name of the new file: ")
+  -- Execute the bash script with current_directory and filename as arguments
+  local command = "! /home/skypea/myScript/bin/new_widget.sh "
+    .. vim.fn.shellescape(current_directory)
+    .. " "
+    .. vim.fn.shellescape(filename)
+    .. " "
+    .. vim.fn.shellescape("%:p")
+  vim.cmd(command)
+  -- Refresh the file explorer (if you're using any plugin like NERDTree)
+  vim.cmd("silent! NERDTreeRefreshRoot")
+  -- Add a new line with the desired content to the current file
+end, { noremap = true, silent = true, desc = "create a new widget file" })

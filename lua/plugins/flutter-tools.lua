@@ -4,6 +4,7 @@ return {
   --   { "<leader>r", "<cmd> FlutterRun <CR>" },
   -- },
   opts = {
+    fvm = true,
     ui = {
       border = "rounded",
       notification_style = "native",
@@ -38,7 +39,7 @@ return {
     },
     debugger = {
       enabled = true,
-      run_via_dap = false,
+      run_via_dap = true,
     },
     -- dev_log = {
     --   enabled = true,
