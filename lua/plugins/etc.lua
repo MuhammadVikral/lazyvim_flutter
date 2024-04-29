@@ -4,8 +4,10 @@ return {
   { "numToStr/Comment.nvim" },
   { "christoomey/vim-tmux-navigator" },
   { "rbgrouleff/bclose.vim" },
-  { "francoiscabrol/ranger.vim" },
   { "mbbill/undotree" },
+  { "valentjn/ltex-ls" },
+  { "f-person/git-blame.nvim" },
+  { "epwalsh/obsidian.nvim" },
   { dir = "~/.config/nvim/fcreate/", dev = true, lazy = false },
   -- { "github/copilot.vim" },
 }

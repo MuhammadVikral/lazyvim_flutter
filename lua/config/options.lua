@@ -3,5 +3,8 @@
 -- Add any additional options here
 vim.opt.clipboard = "unnamedplus"
 vim.opt.scrolloff = 8
+vim.opt.spelllang = "en_us"
+vim.opt.spell = true
+
 vim.g.neovide_transparency = 0.8
 vim.opt.splitright = true
