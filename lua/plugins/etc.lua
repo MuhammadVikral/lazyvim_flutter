@@ -9,5 +9,4 @@ return {
   { "f-person/git-blame.nvim" },
   { "epwalsh/obsidian.nvim" },
   { dir = "~/.config/nvim/fcreate/", dev = true, lazy = false },
-  -- { "github/copilot.vim" },
 }
