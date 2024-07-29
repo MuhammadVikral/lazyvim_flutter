@@ -20,9 +20,7 @@ map({ "n", "v" }, "gb", "^", { desc = "go to the last word in line" })
 --buffer
 map("n", "[b", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
 map("n", "]b", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
-map("n", "<C-x>", function()
-  require("mini.bufremove").delete(0, true)
-end, { desc = "Delete Buffer" })
+map("n", "<C-x>", LazyVim.ui.bufremove, { desc = "Delete Buffer" })
 
 -- from primegean
 map("x", "<leader>p", [["_dP]])
