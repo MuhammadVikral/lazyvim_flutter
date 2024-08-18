@@ -38,8 +38,9 @@ map("n", "<C-h>", "<cmd> TmuxNavigateLeft<CR>")
 map("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>")
 
 --insert mode binding
--- map("i", "jk", "<Esc>", { desc = "escape insert mode with jk" })
+map("i", "jk", "<Esc>", { desc = "exit insert mode" })
 map("i", "jj", "<C-o>a", { desc = "exit insert mode then go to next word" })
+map("i", "jss", "<Esc>:wa<CR>", { noremap = true, silent = true, desc = "save file" })
 
 -- copy to file path
 map("n", "<leader>fp", function()
