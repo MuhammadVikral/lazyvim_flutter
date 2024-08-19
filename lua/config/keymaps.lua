@@ -42,6 +42,8 @@ map("i", "jk", "<Esc>", { desc = "exit insert mode" })
 map("i", "jj", "<C-o>a", { desc = "exit insert mode then go to next word" })
 map("i", "jss", "<Esc>:wa<CR>", { noremap = true, silent = true, desc = "save file" })
 
+map("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+
 -- copy to file path
 map("n", "<leader>fp", function()
   local file_path = vim.fn.expand("%:p")
