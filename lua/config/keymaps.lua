@@ -27,7 +27,10 @@ map("x", "<leader>p", [["_dP]])
 map("n", "<C-d>", "<C-d>zz")
 map("n", "<C-u>", "<C-u>zz")
 map("n", "G", "Gzz")
-map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+map("n", "<leader>ra", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+map("n", "<leader>rl", [[:s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+map("v", "<leader>sv", [[:s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
 map("n", "<leader>ch", "<cmd>!chmod +x %<CR>", { silent = true })
 map("n", "<leader>uu", "<cmd>UndotreeToggle<CR>", { silent = true })
 
@@ -67,14 +70,14 @@ map("n", "<leader>fnf", function()
 end, { silent = true })
 
 --flutter
-map("n", "<leader>rf", "<cmd> FlutterRun <CR>", { desc = "Run Flutter Apps" })
-map("n", "<leader>rfw", "<cmd> FlutterRun -t widgetbook/main.dart <CR>", { desc = "Run Flutter widgetbook" })
-map("n", "<leader>rr", "<cmd> FlutterReload <CR>", { desc = "Reload Flutter Apps" })
-map("n", "<leader>rR", "<cmd> FlutterRestart <CR>", { desc = "Restart Flutter Apps" })
-map("n", "<leader>rl", "<cmd> FlutterLogClear <CR>", { desc = "Clear the log of Flutter Apps" })
-map("n", "<leader>rd", "<cmd> FlutterDevices <CR>", { desc = "Check available device" })
-map("n", "<leader>rq", "<cmd> FlutterQuit <CR>", { desc = "Stop Running Application" })
-map("n", "<leader>rt", "<cmd> !flutter_test.sh %:p<CR>", { desc = "run flutter test on current file" })
+-- map("n", "<leader>rf", "<cmd> FlutterRun <CR>", { desc = "Run Flutter Apps" })
+-- map("n", "<leader>rfw", "<cmd> FlutterRun -t widgetbook/main.dart <CR>", { desc = "Run Flutter widgetbook" })
+-- map("n", "<leader>rr", "<cmd> FlutterReload <CR>", { desc = "Reload Flutter Apps" })
+-- map("n", "<leader>rR", "<cmd> FlutterRestart <CR>", { desc = "Restart Flutter Apps" })
+-- map("n", "<leader>rl", "<cmd> FlutterLogClear <CR>", { desc = "Clear the log of Flutter Apps" })
+-- map("n", "<leader>rd", "<cmd> FlutterDevices <CR>", { desc = "Check available device" })
+-- map("n", "<leader>rq", "<cmd> FlutterQuit <CR>", { desc = "Stop Running Application" })
+-- map("n", "<leader>rt", "<cmd> !flutter_test.sh %:p<CR>", { desc = "run flutter test on current file" })
 map("n", "<leader>gt", function()
   package.loaded["fcreate"] = nil
   require("fcreate").cbx()
@@ -95,3 +98,6 @@ map("n", "<leader>rw", function()
   vim.cmd("silent! NERDTreeRefreshRoot")
   -- Add a new line with the desired content to the current file
 end, { noremap = true, silent = true, desc = "create a new widget file" })
+
+--qol
+map("n", "<leader>h", "<cmd> Precognition peek <CR>", { desc = "peek vim motion" })
